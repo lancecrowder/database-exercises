@@ -1,6 +1,4 @@
 use employees;
 
 SELECT * FROM employees
-WHERE first_name
-      IN ('Irena', 'Vidya', 'Maya')
-AND gender = 'M';
+WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
