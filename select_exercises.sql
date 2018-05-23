@@ -14,5 +14,5 @@ select record_name from albums where release_date between 1990 and 1999;
 select 'Which albums had less than 20 million certified sales' as 'Info';
 select record_name from albums where sales<20;
 
-select 'All the albums with a genre of "Rock". Why do these query results not include albums with a genre of "Hard rock" or "Progressive rock"?' as 'Info';
+select 'All the albums with a genre of "Rock"?' as 'Info';
 select record_name from albums where genre LIKE '%Rock%';
