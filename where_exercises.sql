@@ -1,5 +1,4 @@
 use employees;
 
 SELECT * FROM employees
-WHERE hire_date LIKE '199%'
-AND birth_date LIKE '%-12-25';
+WHERE last_name Like '%q%' AND last_name NOT LIKE '%qu%';
