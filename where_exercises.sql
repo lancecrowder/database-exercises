@@ -1,5 +1,4 @@
 use employees;
 
 SELECT * FROM employees
-WHERE (first_name = 'Irena' OR first_name = 'Vidya' OR first_name = 'Maya')
-AND gender = 'M';
+WHERE last_name like 'E%' OR last_name like '%E';
