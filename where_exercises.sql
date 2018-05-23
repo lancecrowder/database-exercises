@@ -7,7 +7,7 @@ SELECT * FROM employees
 WHERE last_name LIKE 'E%' OR last_name LIKE '%E';
 
 SELECT * FROM employees
-WHERE last_name LIKE 'E%' AND last_name LIKE '%E';
+WHERE last_name LIKE 'E%E';
 
 SELECT * FROM employees
 WHERE hire_date Like '199%' AND birth_date LIKE '%-12-25';
