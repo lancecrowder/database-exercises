@@ -13,7 +13,9 @@ SELECT concat(first_name, ' ', last_name) as 'Full Name' FROM employees
 WHERE last_name LIKE 'E%E'
 ORDER BY emp_no DESC;
 
-SELECT concat(first_name, ' ',last_name,  'has been Employed for ', (DATEDIFF(NOW(), hire_date)), ' Days') AS 'Days Employed' FROM employees
+SELECT concat(first_name, ' ',last_name,  ' has been Employed for ', (DATEDIFF(CURDATE(), hire_date)), ' Days')
+  AS 'Days Employed'
+FROM employees
 WHERE hire_date Like '199%' AND birth_date LIKE '%-12-25'
 ORDER BY birth_date, hire_date DESC;
 
