@@ -9,5 +9,6 @@ record_name VARCHAR(150),
 release_date SMALLINT UNSIGNED,
 sales FLOAT(6, 2),
 genre VARCHAR(50),
-PRIMARY KEY (id)
+PRIMARY KEY (id),
+UNIQUE (record_name, artist)
 );
