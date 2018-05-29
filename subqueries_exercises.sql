@@ -2,7 +2,7 @@ use employees;
 
 SELECT CONCAT(first_name,' ', Last_name) AS Name
 from employees
-WHERE hire_date = (
+WHERE hire_date IN (
   SELECT hire_date
   FROM employees
   WHERE emp_no = 101010
@@ -51,11 +51,11 @@ WHERE dept_no IN (
 );
 
 SELECT CONCAT(first_name,' ', last_name) AS 'Highest Paid Employee'
-FROM employees AS e
+FROM employees
 WHERE emp_no IN (
   SELECT emp_no
   FROM salaries
-  WHERE salary = (
+  WHERE salary IN (
     SELECT MAX(salary)
     FROM salaries
   )
