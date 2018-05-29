@@ -1,4 +1,4 @@
-CREATE DATABASE join_test_db;
+USE join_test_db;
 
 CREATE TABLE roles (
   id INT UNSIGNED NOT NULL AUTO_INCREMENT,
@@ -25,3 +25,16 @@ INSERT INTO users (name, email, role_id) VALUES
   ('joe', 'joe@example.com', 2),
   ('sally', 'sally@example.com', 2),
   ('adam', 'adam@example.com', NULL)
+
+SELECT *
+FROM roles
+JOIN users u on roles.id = u.role_id;
+
+SELECT *
+FROM roles
+LEFT JOIN users u on roles.id = u.role_id;
+
+
+SELECT *
+FROM roles
+RIGHT JOIN users u on roles.id = u.role_id;
