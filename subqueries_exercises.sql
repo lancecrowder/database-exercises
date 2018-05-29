@@ -8,7 +8,7 @@ WHERE hire_date = (
   WHERE emp_no = 101010
 );
 
-SELECT title
+SELECT DISTINCT title
 FROM titles
 WHERE emp_no IN (
   SELECT emp_no
