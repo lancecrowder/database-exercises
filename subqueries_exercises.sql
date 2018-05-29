@@ -24,7 +24,7 @@ WHERE emp_no IN (
   WHERE first_name = 'Aamod'
 );
 
-SELECT CONCAT(first_name, ' ', last_name) as CurrentFemaleManagers
+SELECT CONCAT(first_name, ' ', last_name) as 'Current Female Managers'
 FROM employees
 WHERE emp_no IN (
   SELECT emp_no
@@ -35,4 +35,17 @@ WHERE emp_no IN (
     WHERE to_date > NOW()
   )
   AND gender = 'F'
+);
+
+SELECT dept_name  as 'Current Departments with Female Managers'
+FROM departments
+WHERE dept_no IN (
+  SELECT dept_no
+  FROM dept_manager
+  WHERE emp_no IN (
+    SELECT emp_no
+    from employees
+    WHERE to_date > NOW()
+          AND gender = 'F'
+  )
 );
