@@ -49,3 +49,14 @@ WHERE dept_no IN (
           AND gender = 'F'
   )
 );
+
+SELECT CONCAT(first_name,' ', last_name) AS 'Highest Paid Employee'
+FROM employees AS e
+WHERE emp_no IN (
+  SELECT emp_no
+  FROM salaries
+  WHERE salary = (
+    SELECT MAX(salary)
+    FROM salaries
+  )
+)LIMIT 1;
